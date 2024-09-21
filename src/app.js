@@ -6,30 +6,36 @@ import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
 window.onload = () => {
-  document.querySelector("#the-excuse").innerHTML = generateExcuse();
-  console.log("Hello Rigo from the console!");
+  document.querySelector("#btn").addEventListener("click", () => {
+    document.querySelector("#excuse").innerHTML = generateExcuses();
+  });
+  console.log("Hello Rigo from the console!  ");
 };
-let generateExcuse = () => {
-  let pronoun = ["A", "The"];
-  let subject = ["jogger", "racoon", "dog", "driver", "comedian", "pincone"];
-  let action = ["took my", "threw my", "yelled at my", "stole my", "bit my"];
-  let possetion = ["car", "toe", "shoe", "homework"];
-  let where = ["on the street", "in my car", "in my house"];
 
-  let proIndex = 0;
-  let subjIndex = 0;
-  let actionIndex = 0;
-  let possetionIndex = 0;
-  let whereIndex = 0;
+let generateExcuses = () => {
+  let who = ["The dog", "My grandma", "His turtle", "My bird"];
+  let action = ["ate", "peed", "crushed", "broke"];
+  let what = ["my homework", "the keys", "the car"];
+  let when = [
+    "before the class",
+    "right on time",
+    "when I finished",
+    "during my lunch",
+    "while I was praying"
+  ];
 
-  return;
-  pronoun[proIndex] +
+  let whoindex = Math.floor(Math.random() * who.length);
+  let actionindex = Math.floor(Math.random() * action.length);
+  let whatindex = Math.floor(Math.random() * what.length);
+  let whenindex = Math.floor(Math.random() * when.length);
+
+  return (
+    who[whoindex] +
     "" +
-    subject[subjIndex] +
-    "" +
-    action[actionIndex] +
-    "" +
-    possetion[possetionIndex] +
-    "" +
-    where[whereIndex];
+    action[actionindex] +
+    " " +
+    what[whatindex] +
+    " " +
+    when[whenindex]
+  );
 };
