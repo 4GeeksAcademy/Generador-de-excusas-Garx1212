@@ -1,22 +1,21 @@
 /* eslint-disable */
 import "bootstrap";
 import "./style.css";
-
 import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
 window.onload = () => {
   document.querySelector("#btn").addEventListener("click", () => {
-    document.querySelector("#excuse").innerHTML = generateExcuses();
+    document.querySelector("#excuse").innerHTML = generateExcuse();
   });
-  console.log("Hello Rigo from the console!  ");
+  console.log("Hello Rigo from the console!");
 };
 
-let generateExcuses = () => {
-  let who = ["The dog", "My grandma", "His turtle", "My bird"];
-  let action = ["ate", "peed", "crushed", "broke"];
-  let what = ["my homework", "the keys", "the car"];
-  let when = [
+const generateExcuse = () => {
+  const who = ["The dog", "My grandma", "His turtle", "My bird"];
+  const action = ["ate", "peed", "crushed", "broke"];
+  const what = ["my homework", "the keys", "the car"];
+  const when = [
     "before the class",
     "right on time",
     "when I finished",
@@ -24,18 +23,10 @@ let generateExcuses = () => {
     "while I was praying"
   ];
 
-  let whoindex = Math.floor(Math.random() * who.length);
-  let actionindex = Math.floor(Math.random() * action.length);
-  let whatindex = Math.floor(Math.random() * what.length);
-  let whenindex = Math.floor(Math.random() * when.length);
+  const whoIndex = Math.floor(Math.random() * who.length);
+  const actionIndex = Math.floor(Math.random() * action.length);
+  const whatIndex = Math.floor(Math.random() * what.length);
+  const whenIndex = Math.floor(Math.random() * when.length);
 
-  return (
-    who[whoindex] +
-    "" +
-    action[actionindex] +
-    " " +
-    what[whatindex] +
-    " " +
-    when[whenindex]
-  );
+  return `${who[whoIndex]} ${action[actionIndex]} ${what[whatIndex]} ${when[whenIndex]}`;
 };
